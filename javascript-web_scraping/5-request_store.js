@@ -12,4 +12,4 @@ request(URL, (error, response, body) => {
       if (err) console.error(err);
     });
   }
-})
+});
