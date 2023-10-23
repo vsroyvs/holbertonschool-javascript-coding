@@ -5,14 +5,15 @@ const request = require('request');
 
 request(URL, (error, response, body) => {
   if (error) console.error(error);
-  else {
-    const data = JSON.parse(body);
-    let counter = 0;
-    let todos = {};
-    for (const user of data.userId) {
-      if (data.completed === true) counter++;
-        todos[user] = counter;
-    }
-    console.log(todos);
-  }
+  const data = JSON.parse(body);
+  let todos = {};
+  data.forEach(task => {
+    if (task.completed){
+      if (todos[task.userId]) {
+        todos[task.userId]++;
+      }
+      else todos[task.userId] = 1;
+      }
+    });
+  console.log(todos);
 });
