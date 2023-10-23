@@ -6,7 +6,7 @@ const request = require('request');
 request(URL, (error, response, body) => {
   if (error) console.error(error);
   const data = JSON.parse(body);
-  let todos = {};
+  const todos = {};
   data.forEach(task => {
     if (task.completed){
       if (todos[task.userId]) {
