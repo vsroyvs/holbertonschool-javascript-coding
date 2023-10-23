@@ -9,9 +9,8 @@ request(URL, (error, response, body) => {
   const todos = {};
   data.forEach(task => {
     if (task.completed) {
-      if (todos[task.userId]) {
+      if (todos[task.userId])
         todos[task.userId]++;
-      }
       else todos[task.userId] = 1;
     }
   });
