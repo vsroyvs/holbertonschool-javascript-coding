@@ -7,17 +7,16 @@ function countStudents(path) {
     const students = {};
 
     for (const row of rows) {
-      if (row.trim() === '') {
-        /* eslint no-continue: "error" */
-        continue;
-      }
-      const [firstName, , , field] = row.split(',');
+      if (row.trim() !== '') {
 
-      if (firstName) {
-        if (students[field]) {
-          students[field].push(firstName);
-        } else {
-          students[field] = [firstName];
+        const [firstName, , , field] = row.split(',');
+
+        if (firstName) {
+          if (students[field]) {
+            students[field].push(firstName);
+          } else {
+            students[field] = [firstName];
+          }
         }
       }
     }
