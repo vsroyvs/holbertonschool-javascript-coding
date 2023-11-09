@@ -8,7 +8,6 @@ function countStudents(path) {
 
     for (const row of rows) {
       if (row.trim() !== '') {
-
         const [firstName, , , field] = row.split(',');
 
         if (firstName) {
