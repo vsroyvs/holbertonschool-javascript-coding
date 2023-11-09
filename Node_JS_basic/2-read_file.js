@@ -8,6 +8,7 @@ function countStudents(path) {
 
     for (const row of rows) {
       if (row.trim() === '') {
+        /*eslint no-continue: "error"*/
         continue;
       }
       const [firstName, , , field] = row.split(',');
