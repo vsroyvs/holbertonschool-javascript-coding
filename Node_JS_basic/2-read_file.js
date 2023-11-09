@@ -7,8 +7,9 @@ function countStudents(path) {
     const students = {};
 
     for (const row of rows) {
-      if (row.trim() === '') continue;
-
+      if (row.trim() === '') {
+        continue;
+      }
       const [firstName, , , field] = row.split(',');
 
       if (firstName) {
@@ -20,7 +21,7 @@ function countStudents(path) {
       }
     }
 
-    let totalStudents = (students['CS\r'].length + students['SWE\r'].length)
+    const totalStudents = (students['CS\r'].length + students['SWE\r'].length);
     console.log(`Number of students: ${totalStudents}`);
     const studentsSWE = students['SWE\r'].join(', ');
     const studentsCS = students['CS\r'].join(', ');
