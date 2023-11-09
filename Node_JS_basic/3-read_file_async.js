@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 
 function countStudents(path) {
   return fs.readFile(path, { encoding: 'utf-8' })
-    .then(data => {
+    .then((data) => {
       let students = data.split('\n').map((elem) => elem.split(','));
       students = students.slice(1, students.length - 1);
       const fields = {};
@@ -30,7 +30,7 @@ function countStudents(path) {
         console.log(result);
       });
     })
-    .catch((error) => {
+    .catch(() => {
       throw new Error('Cannot load the database');
     });
 }
